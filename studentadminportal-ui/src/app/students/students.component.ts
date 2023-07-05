@@ -15,7 +15,7 @@ export class StudentsComponent implements OnInit {
  students : Student[] = [];
 
  displayedColumns: string[] = ['firstName','lastName','dateOfBirth', 'email','mobile',
- 'gender'];
+ 'gender','edit'];
 
   dataSource: MatTableDataSource<Student> = new MatTableDataSource<Student>();
 
@@ -26,7 +26,7 @@ export class StudentsComponent implements OnInit {
   constructor(private studentService :StudentService){}
   ngOnInit():void{
     //fetch Students
-    this.studentService.getStudent()
+    this.studentService.getStudents()
     .subscribe(
       (successResponse) => {
        // console.log(successResponse[0].firstName);
